@@ -71,17 +71,18 @@ public class MetroHomePage {
     public void waitForLoadRoute() {
         // подожди 3 секунды, чтобы элемент с нужным текстом стал видимым
         new WebDriverWait(driver, 3)
-               ....;
+                .until(ExpectedConditions.visibilityOfElementLocated
+                        (By.xpath("//[text() = 'Получить ссылку на маршрут']")));
     }
 
     // метод построения маршрута
-    public void buildRoute(...,...) {
+    public void buildRoute(String stationFrom, String stationTo) {
         // указание станции «Откуда»
-        setStationFrom(...);
+        setStationFrom(stationFrom);
         // указание станции «Куда»
-        setStationTo(...);
+        setStationTo(stationTo);
         // ожидание построения маршрута
-        ...
+        waitForLoadRoute();
     }
 
     // метод получения имени станции «Откуда» для построенного маршрута
@@ -103,7 +104,7 @@ public class MetroHomePage {
     }
 
     // метод проверки с ожиданием видимости станции метро
-    public void waitForStationVisibility(...stationName) {
+    public void waitForStationVisibility(String stationName) {
         // ждем видимости элемента с нужным текстом из параметра в течение 8 секунд
         new WebDriverWait(driver, 8)...
 
