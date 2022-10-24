@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
 public class MetroHomePage {
+    private String stationFrom;
     // поле с экземпляром веб драйвера
     private WebDriver driver;
 
@@ -54,15 +55,15 @@ public class MetroHomePage {
     }
 
     // метод ввода названия станции в поле «Откуда»
-    public void setStationFrom(stationFrom) {
+    public void setStationFrom(String stationFrom) {
         // введи название станции в поле ввода, а затем с помощью клавиш «Вниз» и Enter выбери его в выпадающем списке саджеста
-        driver.findElement(fieldFrom).sendKeys(...Keys.DOWN, Keys.ENTER);
+        driver.findElement(fieldFrom).sendKeys(stationFrom, Keys.DOWN, Keys.ENTER);
     }
 
     // метод ввода названия станции в поле «Куда»
-    public void setStationTo(...) {
+    public void setStationTo(String stationTo) {
         // введи название станции в поле ввода, а затем с помощью клавиш «Вниз» и Enter выбери его в выпадающем списке саджеста
-       ...sendKeys(...Keys.DOWN, Keys.ENTER);
+        driver.findElement(fieldTo).sendKeys(stationTo, Keys.DOWN, Keys.ENTER);
 
     }
 
