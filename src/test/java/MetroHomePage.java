@@ -54,7 +54,7 @@ public class MetroHomePage {
     }
 
     // метод ввода названия станции в поле «Откуда»
-    public void setStationFrom(...) {
+    public void setStationFrom(stationFrom) {
         // введи название станции в поле ввода, а затем с помощью клавиш «Вниз» и Enter выбери его в выпадающем списке саджеста
         driver.findElement(fieldFrom).sendKeys(...Keys.DOWN, Keys.ENTER);
     }
