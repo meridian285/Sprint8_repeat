@@ -55,8 +55,19 @@ public class SeleniumMetroTest {
         // построй маршрут от «Лубянки» до «Красногвардейской»
         metroPage.buildRoute(STATION_LUBYANKA, STATION_KRASNOGVARD);
         // проверь, что отображается корректное название станции начала маршрута
-        metroPage.getRouteStationFrom();
-
+        Assert.assertEquals(STATION_LUBYANKA, metroPage.getRouteStationFrom());
+    }
+    @Test
+    public void checkRouteStationToIsCorrect() {
+        // открой браузер
+        // перейди на страницу стенда
+        MetroHomePage metroPage = new MetroHomePage(driver);
+        // дождись загрузки страницы
+        metroPage.waitForLoadHomePage();
+        // построй маршрут от «Лубянки» до «Красногвардейской»
+        metroPage.buildRoute(STATION_LUBYANKA, STATION_KRASNOGVARD);
+        // проверь, что отображается корректное название станции конца маршрута
+        Assert.assertEquals(STATION_KRASNOGVARD, metroPage.getRouteStationTo());
     }
 
     // добавь метод с аннотацией After для закрытия браузера
