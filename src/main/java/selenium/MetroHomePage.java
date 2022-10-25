@@ -1,3 +1,5 @@
+package selenium;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -27,8 +29,8 @@ public class MetroHomePage {
     // метод ожидания загрузки страницы: проверили видимость станции «Театральная»
     public void waitForLoadHomePage() {
         // ждем 8 секунд, пока появится веб-элемент с нужным текстом
-        new WebDriverWait(driver, 8)
-                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[text() = 'Театральная']")));
+//        new WebDriverWait(driver, 8)
+//                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[text() = 'Театральная']")));
     }
 
     // метод выбора города по названию
@@ -54,8 +56,8 @@ public class MetroHomePage {
     // метод ожидания построения маршрута: проверяем видимость кнопки «Получить ссылку на маршрут»
     public void waitForLoadRoute() {
         // ждем видимости элемента с нужным текстом в течение 3 секунд
-        new WebDriverWait(driver, 3)
-                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[text() = 'Получить ссылку на маршрут']")));
+//        new WebDriverWait(driver, 3)
+//                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[text() = 'Получить ссылку на маршрут']")));
     }
 
     // метод построения маршрута
@@ -88,7 +90,7 @@ public class MetroHomePage {
 
     // метод проверки с ожиданием видимости станции метро
     public void waitForStationVisibility(String stationName) {
-        new WebDriverWait(driver, 8)
-                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(String.format("//*[text()='%s']", stationName))));
+//        new WebDriverWait(driver, 8)
+//                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(String.format("//*[text()='%s']", stationName))));
     }
 }
