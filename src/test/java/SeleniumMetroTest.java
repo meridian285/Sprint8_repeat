@@ -49,6 +49,15 @@ public class SeleniumMetroTest {
                 // проверь, что у первого маршрута списка отображается нужное примерное время поездки
                 Assert.assertEquals("≈ 36 мин.", metroPage.getApproximateRouteTime(36));
     }
+    // проверь отображение станции «Откуда» в карточке маршрута
+    @Test
+    public void checkRouteStationFromIsCorrect() {
+        // построй маршрут от «Лубянки» до «Красногвардейской»
+        metroPage.buildRoute(STATION_LUBYANKA, STATION_KRASNOGVARD);
+        // проверь, что отображается корректное название станции начала маршрута
+        metroPage.getRouteStationFrom();
+
+    }
 
     // добавь метод с аннотацией After для закрытия браузера
     @After
